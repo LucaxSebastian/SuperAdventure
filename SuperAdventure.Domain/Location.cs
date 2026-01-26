@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace SuperAdventure.Domain;
 
-public class Location
+public class Location(string name, string description)
 {
     public Guid ID { get; init; } = Guid.NewGuid();
-    public required string Name { get; init; }
-    public required string Description { get; set; }
+    public string Name { get; } = name;
+    public string Description { get; } = description;
 }
 

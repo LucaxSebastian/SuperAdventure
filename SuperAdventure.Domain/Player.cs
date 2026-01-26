@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace SuperAdventure.Domain;
 
-public class Player
+public class Player(string name, int maximumHitPoints) : LivingCreature(maximumHitPoints)
 {
-    public int CurrentHitPoints { get; set; }
-    public int MaximumHitPoints { get; set; }
-    public int Gold { get; set; }
-    public int ExperiencePoints { get; set; }
-    public int Level { get; set; }
- }
+    public Guid ID { get; init; } = Guid.NewGuid();
+    public string Name { get; } = name;
+    public int Gold { get; set; } = 20;
+    public int ExperiencePoints { get; set; } = 0;
+    public int Level { get; set; } = 1;
+}
 

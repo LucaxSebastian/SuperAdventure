@@ -7,14 +7,11 @@ using System.Threading.Tasks;
 
 namespace SuperAdventure.Domain;
 
-public class Monster
+public class Monster(string name, int maximumHitPoints, int maximumDamage, int rewardExperiencePoints, int rewardGold) : LivingCreature(maximumHitPoints)
 {
     public Guid ID { get; init; } = Guid.NewGuid();
-    public required string Name { get; init; }
-    public int MaximumHitPoins { get; set; }
-    public int CurrentHitPoints { get; set; }
-    public int MaximumDamage { get; set; }
-    public int RewardExperiencePoints { get; set; }
-    public int RewardGold { get; set; }
+    public required string Name { get; init; } = name;
+    public int MaximumDamage { get; set; } = maximumDamage;
+    public int RewardExperiencePoints { get; set; } = rewardExperiencePoints;
+    public int RewardGold { get; set; } = rewardGold;
 }
-
