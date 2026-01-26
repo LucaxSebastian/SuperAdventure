@@ -1,19 +1,27 @@
+using SuperAdventure.Domain.Players;
+
 namespace SuperAdventure;
 
 public partial class SuperAdventure : Form
 {
+    private readonly Player _player;
+
     public SuperAdventure()
     {
         InitializeComponent();
-    }
 
-    private void SuperAdventure_Load(object sender, EventArgs e)
-    {
+        _player = new Player
+        {
+            CurrentHitPoints = 10,
+            MaximumHitPoints = 10,
+            Gold = 20,
+            ExperiencePoints = 0,
+            Level = 1
+        };
 
-    }
-
-    private void btnTest_Click(object sender, EventArgs e)
-    {
-        IblGold.Text = "123";
+        IblHitPoints.Text = _player.CurrentHitPoints.ToString();
+        IblGold.Text = _player.Gold.ToString();
+        IblExperience.Text = _player.ExperiencePoints.ToString();
+        IblLevel.Text = _player.Level.ToString();
     }
 }

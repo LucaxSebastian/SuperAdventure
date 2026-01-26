@@ -115,7 +115,7 @@ partial class SuperAdventure
         btnTest.TabIndex = 8;
         btnTest.Text = "Test";
         btnTest.UseVisualStyleBackColor = true;
-        btnTest.Click += btnTest_Click;
+        //btnTest.Click += btnTest_Click;
         // 
         // SuperAdventure
         // 
@@ -133,7 +133,7 @@ partial class SuperAdventure
         Controls.Add(label1);
         Name = "SuperAdventure";
         Text = "My Game";
-        Load += SuperAdventure_Load;
+        //Load += SuperAdventure;
         ResumeLayout(false);
         PerformLayout();
     }
